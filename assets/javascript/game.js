@@ -22,8 +22,9 @@ console.log("app guess: " + appGuess)
 document.onkeypress = function (event) {
     var playerGuess = event.key;
 
-    guessUsed.push(String.fromCharCode(guessUsed));
-    console.log(guessUsed);
+    // Add player guess to the list //
+    guessUsed.push(playerGuess);
+    console.log("player guess: " + playerGuess);
 
     // If player wins, add a point, reset guessLeft, and change appGuess //
     if (playerGuess === appGuess) {
@@ -36,7 +37,7 @@ document.onkeypress = function (event) {
         // If player guesses wrong, reduce guessLeft and add guess to guessUsed //
     } else {
         guessLeft--;
-        
+
     }
 
     // If player runs out of guesses, add a loss, reset guessLeft, reset guessUsed, and change appGuess //
@@ -52,9 +53,5 @@ document.onkeypress = function (event) {
     document.getElementById('wins').innerHTML = wins;
     document.getElementById('losses').innerHTML = losses;
     document.getElementById('guessLeft').innerHTML = guessLeft;
-    //document.getElementById('guessUsed').html = guessUsed;
+    document.getElementById('guessUsed').innerHTML = guessUsed;
 }
-
-
-
-
